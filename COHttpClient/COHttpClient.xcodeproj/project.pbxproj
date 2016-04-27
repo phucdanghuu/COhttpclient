@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */; };
+		6E788B631CD0CCF3008EF1F7 /* COHttpClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */; };
+		6E788B741CD0CD55008EF1F7 /* COHttpClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E788B731CD0CD55008EF1F7 /* COHttpClient.h */; };
+		6E788B761CD0CD55008EF1F7 /* COHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B751CD0CD55008EF1F7 /* COHttpClient.m */; };
+		6E788B7C1CD0E309008EF1F7 /* COHttpResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E788B6F1CD0CD55008EF1F7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				6E788B741CD0CD55008EF1F7 /* COHttpClient.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6E788B561CD0CCF3008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
+		6E788B581CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COHttpClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClientTests.m; sourceTree = "<group>"; };
+		6E788B641CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCOHttpClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E788B731CD0CD55008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
+		6E788B751CD0CD55008EF1F7 /* COHttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClient.m; sourceTree = "<group>"; };
+		6E788B7A1CD0E309008EF1F7 /* COHttpResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COHttpResponseObject.h; sourceTree = "<group>"; };
+		6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COHttpResponseObject.m; sourceTree = "<group>"; };
+		728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClient/Pods-COHttpClient.release.xcconfig"; sourceTree = "<group>"; };
+		7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-COHttpClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClient/Pods-COHttpClient.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E788B5A1CD0CCF3008EF1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E788B6E1CD0CD55008EF1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22E598A1798026632D33E97C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */,
+				728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69CEF5556FB71E710784C4D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E788B491CD0CCF3008EF1F7 = {
+			isa = PBXGroup;
+			children = (
+				6E788B551CD0CCF3008EF1F7 /* COHttpClient */,
+				6E788B611CD0CCF3008EF1F7 /* COHttpClientTests */,
+				6E788B721CD0CD55008EF1F7 /* COHttpClient */,
+				6E788B541CD0CCF3008EF1F7 /* Products */,
+				22E598A1798026632D33E97C /* Pods */,
+				69CEF5556FB71E710784C4D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6E788B541CD0CCF3008EF1F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */,
+				6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E788B551CD0CCF3008EF1F7 /* COHttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				6E788B561CD0CCF3008EF1F7 /* COHttpClient.h */,
+				6E788B581CD0CCF3008EF1F7 /* Info.plist */,
+			);
+			path = COHttpClient;
+			sourceTree = "<group>";
+		};
+		6E788B611CD0CCF3008EF1F7 /* COHttpClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */,
+				6E788B641CD0CCF3008EF1F7 /* Info.plist */,
+			);
+			path = COHttpClientTests;
+			sourceTree = "<group>";
+		};
+		6E788B721CD0CD55008EF1F7 /* COHttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				6E788B731CD0CD55008EF1F7 /* COHttpClient.h */,
+				6E788B751CD0CD55008EF1F7 /* COHttpClient.m */,
+				6E788B7A1CD0E309008EF1F7 /* COHttpResponseObject.h */,
+				6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */,
+			);
+			path = COHttpClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E788B5C1CD0CCF3008EF1F7 /* COHttpClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E788B6A1CD0CCF3008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */;
+			buildPhases = (
+				6E788B591CD0CCF3008EF1F7 /* Sources */,
+				6E788B5A1CD0CCF3008EF1F7 /* Frameworks */,
+				6E788B5B1CD0CCF3008EF1F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = COHttpClientTests;
+			productName = COHttpClientTests;
+			productReference = 6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E788B701CD0CD55008EF1F7 /* COHttpClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E788B771CD0CD55008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClient" */;
+			buildPhases = (
+				09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */,
+				6E788B6D1CD0CD55008EF1F7 /* Sources */,
+				6E788B6E1CD0CD55008EF1F7 /* Frameworks */,
+				6E788B6F1CD0CD55008EF1F7 /* CopyFiles */,
+				73AE8A96A77B69AB08CC6CAA /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = COHttpClient;
+			productName = COHttpClient;
+			productReference = 6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E788B4A1CD0CCF3008EF1F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Cogini;
+				TargetAttributes = {
+					6E788B5C1CD0CCF3008EF1F7 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					6E788B701CD0CD55008EF1F7 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 6E788B4D1CD0CCF3008EF1F7 /* Build configuration list for PBXProject "COHttpClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E788B491CD0CCF3008EF1F7;
+			productRefGroup = 6E788B541CD0CCF3008EF1F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E788B701CD0CD55008EF1F7 /* COHttpClient */,
+				6E788B5C1CD0CCF3008EF1F7 /* COHttpClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E788B5B1CD0CCF3008EF1F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73AE8A96A77B69AB08CC6CAA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-COHttpClient/Pods-COHttpClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E788B591CD0CCF3008EF1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E788B631CD0CCF3008EF1F7 /* COHttpClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E788B6D1CD0CD55008EF1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E788B761CD0CD55008EF1F7 /* COHttpClient.m in Sources */,
+				6E788B7C1CD0E309008EF1F7 /* COHttpResponseObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E788B651CD0CCF3008EF1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6E788B661CD0CCF3008EF1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6E788B6B1CD0CCF3008EF1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = COHttpClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.COHttpClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E788B6C1CD0CCF3008EF1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = COHttpClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.COHttpClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E788B781CD0CD55008EF1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6E788B791CD0CD55008EF1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E788B4D1CD0CCF3008EF1F7 /* Build configuration list for PBXProject "COHttpClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E788B651CD0CCF3008EF1F7 /* Debug */,
+				6E788B661CD0CCF3008EF1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E788B6A1CD0CCF3008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E788B6B1CD0CCF3008EF1F7 /* Debug */,
+				6E788B6C1CD0CCF3008EF1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E788B771CD0CD55008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E788B781CD0CD55008EF1F7 /* Debug */,
+				6E788B791CD0CD55008EF1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E788B4A1CD0CCF3008EF1F7 /* Project object */;
+}
