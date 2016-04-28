@@ -12,7 +12,7 @@
 //#import <AFNetworking/AFHTTPSessionManager.h>
 //#import ""
 
-#define kIS_SHOW_ERROR NO
+//#define kIS_SHOW_ERROR NO
 
 
 #ifdef CLSNSLog
@@ -23,25 +23,25 @@
 
 
 @class COHttpResponseObject;
+@class COHttpClient;
 
-@interface COHttpClientHelper :NSObject
-
-- (COHttpResponseObject *)responseObjectFromDictionnary:(id)responseObject;
-- (void)handleFail:(NSURLSessionDataTask *)operation error:(NSError *)error;
-@end
-
-@protocol COHttpClientDataSource
-
-- (NSDictionary *)httpClientWithDefaultHeaderFields;
-- (void)httpClientDidCatchFailure:(NSURLSessionDataTask *)operation error:(NSError *)error;
+@protocol COHttpClientDataSource <NSObject>
+- (NSDictionary *)httpClientWithDefaultHeaderFields:(COHttpClient *)httpClient;
+- (void)httpClient:(COHttpClient *)httpClient didCatchFailure:(NSURLSessionDataTask *)operation error:(NSError *)error;
+- (COHttpResponseObject *)httpClient:(COHttpClient *)httpClient responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionnary:(id)responseObject;
 @end
 
 
-@interface COHttpClient : NSObject {
-  AFHTTPSessionManager * _manager;
-}
+@interface COHttpClient : NSObject
 
-@property (nonatomic, strong) COHttpClientHelper *httpHelper;
+@property (nonatomic, strong) id<COHttpClientDataSource> dataSource;
+
+@property (nonatomic, readonly) NSString *apiVersion;
+@property (nonatomic, readonly) NSString *deviceType;
+@property (nonatomic, readonly) NSString *accessToken;
+
+- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
+- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version;
 
 - (NSURLSessionDataTask *) GET:(NSString *)URLString
                       parameters:(id)parameters
