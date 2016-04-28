@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */; };
-		6E788B631CD0CCF3008EF1F7 /* COHttpClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */; };
 		6E788B741CD0CD55008EF1F7 /* COHttpClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E788B731CD0CD55008EF1F7 /* COHttpClient.h */; };
 		6E788B761CD0CD55008EF1F7 /* COHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B751CD0CD55008EF1F7 /* COHttpClient.m */; };
 		6E788B7C1CD0E309008EF1F7 /* COHttpResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */; };
@@ -28,11 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E788B561CD0CCF3008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
 		6E788B581CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COHttpClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClientTests.m; sourceTree = "<group>"; };
-		6E788B641CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCOHttpClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E788B731CD0CD55008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
 		6E788B751CD0CD55008EF1F7 /* COHttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClient.m; sourceTree = "<group>"; };
@@ -44,13 +39,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E788B5A1CD0CCF3008EF1F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6E788B6E1CD0CD55008EF1F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				6E788B551CD0CCF3008EF1F7 /* COHttpClient */,
-				6E788B611CD0CCF3008EF1F7 /* COHttpClientTests */,
 				6E788B721CD0CD55008EF1F7 /* COHttpClient */,
 				6E788B541CD0CCF3008EF1F7 /* Products */,
 				22E598A1798026632D33E97C /* Pods */,
@@ -94,7 +81,6 @@
 		6E788B541CD0CCF3008EF1F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */,
 				6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */,
 			);
 			name = Products;
@@ -103,19 +89,9 @@
 		6E788B551CD0CCF3008EF1F7 /* COHttpClient */ = {
 			isa = PBXGroup;
 			children = (
-				6E788B561CD0CCF3008EF1F7 /* COHttpClient.h */,
 				6E788B581CD0CCF3008EF1F7 /* Info.plist */,
 			);
 			path = COHttpClient;
-			sourceTree = "<group>";
-		};
-		6E788B611CD0CCF3008EF1F7 /* COHttpClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				6E788B621CD0CCF3008EF1F7 /* COHttpClientTests.m */,
-				6E788B641CD0CCF3008EF1F7 /* Info.plist */,
-			);
-			path = COHttpClientTests;
 			sourceTree = "<group>";
 		};
 		6E788B721CD0CD55008EF1F7 /* COHttpClient */ = {
@@ -132,23 +108,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E788B5C1CD0CCF3008EF1F7 /* COHttpClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E788B6A1CD0CCF3008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */;
-			buildPhases = (
-				6E788B591CD0CCF3008EF1F7 /* Sources */,
-				6E788B5A1CD0CCF3008EF1F7 /* Frameworks */,
-				6E788B5B1CD0CCF3008EF1F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = COHttpClientTests;
-			productName = COHttpClientTests;
-			productReference = 6E788B5D1CD0CCF3008EF1F7 /* COHttpClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		6E788B701CD0CD55008EF1F7 /* COHttpClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E788B771CD0CD55008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClient" */;
@@ -177,9 +136,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Cogini;
 				TargetAttributes = {
-					6E788B5C1CD0CCF3008EF1F7 = {
-						CreatedOnToolsVersion = 7.3;
-					};
 					6E788B701CD0CD55008EF1F7 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -198,20 +154,9 @@
 			projectRoot = "";
 			targets = (
 				6E788B701CD0CD55008EF1F7 /* COHttpClient */,
-				6E788B5C1CD0CCF3008EF1F7 /* COHttpClientTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		6E788B5B1CD0CCF3008EF1F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */ = {
@@ -247,14 +192,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6E788B591CD0CCF3008EF1F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E788B631CD0CCF3008EF1F7 /* COHttpClientTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6E788B6D1CD0CD55008EF1F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,26 +294,6 @@
 			};
 			name = Release;
 		};
-		6E788B6B1CD0CCF3008EF1F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = COHttpClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.COHttpClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		6E788B6C1CD0CCF3008EF1F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = COHttpClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.COHttpClientTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		6E788B781CD0CD55008EF1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */;
@@ -405,15 +322,6 @@
 			buildConfigurations = (
 				6E788B651CD0CCF3008EF1F7 /* Debug */,
 				6E788B661CD0CCF3008EF1F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6E788B6A1CD0CCF3008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E788B6B1CD0CCF3008EF1F7 /* Debug */,
-				6E788B6C1CD0CCF3008EF1F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
