@@ -18,7 +18,7 @@
 #ifdef CLSNSLog
 #define HCLOG(__FORMAT__, ...) CLSNSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
-#define HCLOG(__FORMAT__, ...)
+#define HCLOG(__FORMAT__, ...) NSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #endif
 
 
