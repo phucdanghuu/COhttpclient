@@ -72,9 +72,9 @@
     [requestSerializer setValue:self.accessToken forHTTPHeaderField:kCOHttpClientAccessTokenKey];
   }
 
-  if (self.dataSource && [self.dataSource respondsToSelector:@selector(httpClientWithDefaultHeaderFields:)]) {
+  if (self.delegate && [self.delegate respondsToSelector:@selector(httpClientWithDefaultHeaderFields:)]) {
 
-    NSDictionary *dic = [self.dataSource httpClientWithDefaultHeaderFields:self];
+    NSDictionary *dic = [self.delegate httpClientWithDefaultHeaderFields:self];
 
     for (NSString *key in [dic allKeys]) {
       [requestSerializer setValue:dic[key] forHTTPHeaderField:key];
@@ -84,15 +84,11 @@
 
 - (COHttpResponseObject *)responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionnary:(id)responseObject {
 
-  if (self.dataSource && [self.dataSource respondsToSelector:@selector(httpClient:responseObjectFromTask:andDictionnary:)]) {
-
-    COHttpResponseObject *httpResponseObject = [self.dataSource httpClient:self responseObjectFromTask:operation andDictionnary:responseObject];
-
+  if (self.delegate && [self.delegate respondsToSelector:@selector(httpClient:responseObjectFromTask:andDictionnary:)]) {
+    COHttpResponseObject *httpResponseObject = [self.delegate httpClient:self responseObjectFromTask:operation andDictionnary:responseObject];
     NSAssert(httpResponseObject != nil, @"httpClient:responseObjectFromTask:andDictionnary: MUST BE RETURN NOT NIL");
-
     return httpResponseObject;
   } else {
-
     COHttpResponseObject *httpResponseObject = [[COHttpResponseObject alloc] initWithResponseDic:responseObject];
     return httpResponseObject;
   }
@@ -100,11 +96,10 @@
 
 
 - (void)didCatchFailure:(NSURLSessionDataTask *)operation error:(NSError *)error {
-  if (self.dataSource && [self.dataSource respondsToSelector:@selector(httpClient:didCatchFailure:error:)]) {
-    [self.dataSource httpClient:self didCatchFailure:operation error:error];
+  if (self.delegate && [self.delegate respondsToSelector:@selector(httpClient:didCatchFailure:error:)]) {
+    [self.delegate httpClient:self didCatchFailure:operation error:error];
   }
 }
-
 
 - (NSURLSessionDataTask *) GET:(NSString *)URLString
                     parameters:(id)parameters
@@ -115,6 +110,7 @@
   HCLOG(@"header %@, params%@", _manager.requestSerializer.HTTPRequestHeaders, parameters);
 
   return [_manager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    //TODO: Handle download progress
 
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
@@ -136,6 +132,7 @@
 
   return [_manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
 
+    //TODO: Handle download progress
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
     success (task, response);

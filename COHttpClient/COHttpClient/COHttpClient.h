@@ -25,23 +25,75 @@
 @class COHttpResponseObject;
 @class COHttpClient;
 
-@protocol COHttpClientDataSource <NSObject>
+/**
+ *  This delegate purpose is to cutomize header fields, response object or error handling
+ */
+@protocol COHttpClientDataDelegate <NSObject>
+
+/**
+ *  Beside of three default header fields (Device Type, API Version, Access token). This delegate method determines another header fields
+ *
+ *  @param httpClient Http
+ *
+ *  @return return header fields NSDictionary
+ */
 - (NSDictionary *)httpClientWithDefaultHeaderFields:(COHttpClient *)httpClient;
+
+/**
+ *  This delegate method will be called when COHttpClient receives any network error
+ *
+ *  @param httpClient COHttpClient
+ *  @param operation  NSURLSessionDataTask
+ *  @param error      NSError
+ */
 - (void)httpClient:(COHttpClient *)httpClient didCatchFailure:(NSURLSessionDataTask *)operation error:(NSError *)error;
+
+/**
+ *  This delegate method determines COHttpResponseObject from object, which received from server. If this method return nil, COHttpClient will create default COHttpResponseObject from received data
+ *
+ *  @param httpClient     COHttpClient
+ *  @param operation      NSURLSessionDataTask
+ *  @param responseObject received data from server
+ *
+ *  @return <#return value description#>
+ */
 - (COHttpResponseObject *)httpClient:(COHttpClient *)httpClient responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionnary:(id)responseObject;
 @end
 
 
+/**
+ *  This class is a wrapper class of AFHTTPSessionManager. It is created to support for easily calling API with Mobile Api Convention (https://gitlab.cogini.com/cogini/wiki/wikis/Mobile-API-Convention)
+ */
 @interface COHttpClient : NSObject
 
-@property (nonatomic, strong) id<COHttpClientDataSource> dataSource;
+@property (nonatomic, strong) id<COHttpClientDataDelegate> delegate;
 
+/**
+ *  According to Cogini Mobile API Convention, this field value that determines API Version, is set on header fields
+ */
 @property (nonatomic, readonly) NSString *apiVersion;
+
+/**
+ *  According to Cogini Mobile API Convention, this field value that determines deivce type, is set on header fields
+ */
 @property (nonatomic, readonly) NSString *deviceType;
+
+/**
+ *  According to Cogini Mobile API Convention, this field value that determines access token, is set on header fields
+ */
 @property (nonatomic, readonly) NSString *accessToken;
 
-- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
-- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version;
+- (instancetype)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
+
+/**
+ *  Contruction, with setting deviceType to default value "IOS"
+ *
+ *  @param baseUrl base API Url
+ *  @param version API version
+ *
+ *  @return <#return value description#>
+ */
+- (instancetype)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version;
 
 - (NSURLSessionDataTask *) GET:(NSString *)URLString
                       parameters:(id)parameters
