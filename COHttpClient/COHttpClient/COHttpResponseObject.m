@@ -8,18 +8,18 @@
 
 #import "COHttpResponseObject.h"
 
-#define kErrorMapping  @{@"OK": @(COHttpResponseObjectErrorTypeSuccess), \
-@"REQUEST_INVALID": @(COHttpResponseObjectErrorTypeRequestValid), \
-@"VERSION_UPDATE_REQUIRED": @(COHttpResponseObjectErrorTypeUpdateVersionRequired), \
-@"UNAUTHENTICATION": @(COHttpResponseObjectErrorTypeUnAuthentication), \
-@"LOGIN_FAILED" : @(COHttpResponseObjectErrorTypeUnLoginFailed), \
-@"VALIDATION_FAILED" : @(COHttpResponseObjectErrorTypeValidationFailed), \
-@"ERROR" : @(COHttpResponseObjectErrorTypeError), \
-@"DATA_NOT_FOUND" : @(COHttpResponseObjectErrorTypeDataNotFound) \
+#define kErrorMapping  @{@"OK": @(COHttpResponseObjectStatusTypeSuccess), \
+@"VALIDATION_FAILED" : @(COHttpResponseObjectStatusTypeValidationFailed), \
+@"PERMISSION_DENIED" : @(COHttpResponseObjectStatusTypePermissionDenied), \
+@"REQUEST_INVALID": @(COHttpResponseObjectStatusTypeRequestInvalid), \
+@"VERSION_UPDATE_REQUIRED": @(COHttpResponseObjectStatusTypeUpdateVersionRequired), \
+@"UNAUTHENTICATION": @(COHttpResponseObjectStatusTypeUnAuthentication), \
+@"LOGIN_FAILED" : @(COHttpResponseObjectStatusTypeLoginFailed), \
+@"ERROR" : @(COHttpResponseObjectStatusTypeError), \
+@"DATA_NOT_FOUND" : @(COHttpResponseObjectStatusTypeDataNotFound) \
 }
 
-@implementation CCValidationFailedField
-
+@implementation COValidationFailedField
 
 @end
 
@@ -33,38 +33,33 @@
 
   if (self = [super init]) {
 
-    HCLOG(@"response %@", response);
 
+    _rawData = response;
     NSString *status = [response objectForKey:@"status"];
 
     if (status) {
       self.status = [kErrorMapping objectForKey:status] ?[[kErrorMapping objectForKey:status] integerValue]
-      : COHttpResponseObjectErrorTypeUnknown;
+      : COHttpResponseObjectStatusTypeUnknown;
     }
     else {
-      self.status = COHttpResponseObjectErrorTypeUnknown;
+      self.status = COHttpResponseObjectStatusTypeUnknown;
     }
 
-    if (self.status == COHttpResponseObjectErrorTypeSuccess) {
+    if (self.status == COHttpResponseObjectStatusTypeSuccess) {
       self.data = [response objectForKey:@"data"];
     } else {
-
       id message = [response objectForKey:@"message"];
       self.errorMessage = [message isKindOfClass:[NSArray class]] ? [message componentsJoinedByString:@"\n"] : message;
-
-
-
     }
 
-    if (self.status == COHttpResponseObjectErrorTypeValidationFailed) {
+    if (self.status == COHttpResponseObjectStatusTypeValidationFailed) {
       id fields = [response objectForKey:@"fields"];
-
 
       if ([fields isKindOfClass:[NSArray class]]) {
         NSMutableArray *validationFailedFields = [NSMutableArray array];
 
         for (id dic  in fields) {
-          CCValidationFailedField *field = [[CCValidationFailedField alloc] init];
+          COValidationFailedField *field = [[COValidationFailedField alloc] init];
           field.key = dic[@"key"];
           field.message = dic[@"message"];
 

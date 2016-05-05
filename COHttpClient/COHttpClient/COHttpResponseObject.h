@@ -10,18 +10,19 @@
 #import "COHttpClient.h"
 
 typedef enum : NSUInteger {
-  COHttpResponseObjectErrorTypeSuccess = 1,
-  COHttpResponseObjectErrorTypeRequestValid,
-  COHttpResponseObjectErrorTypeUpdateVersionRequired,
-  COHttpResponseObjectErrorTypeUnAuthentication,
-  COHttpResponseObjectErrorTypeError,
-  COHttpResponseObjectErrorTypeDataNotFound,
-  COHttpResponseObjectErrorTypeUnknown,
-  COHttpResponseObjectErrorTypeUnLoginFailed,
-  COHttpResponseObjectErrorTypeValidationFailed
-} COHttpResponseObjectErrorType;
+  COHttpResponseObjectStatusTypeSuccess = 1,
+  COHttpResponseObjectStatusTypeLoginFailed,
+  COHttpResponseObjectStatusTypePermissionDenied,
+  COHttpResponseObjectStatusTypeRequestInvalid,
+  COHttpResponseObjectStatusTypeUpdateVersionRequired,
+  COHttpResponseObjectStatusTypeUnAuthentication,
+  COHttpResponseObjectStatusTypeError,
+  COHttpResponseObjectStatusTypeDataNotFound,
+  COHttpResponseObjectStatusTypeUnknown,
+  COHttpResponseObjectStatusTypeValidationFailed
+} COHttpResponseObjectStatusType;
 
-@interface CCValidationFailedField : NSObject
+@interface COValidationFailedField : NSObject
 @property (nonatomic, strong) NSString *key;
 @property (nonatomic, strong) NSString *message;
 @end
@@ -32,9 +33,9 @@ typedef enum : NSUInteger {
 //@property (atomic, assign) BOOL isSuc;
 @property (nonatomic, strong) id data;
 @property (nonatomic, strong) NSString *errorMessage;
-@property (atomic, assign) COHttpResponseObjectErrorType status;
+@property (atomic, assign) COHttpResponseObjectStatusType status;
 @property (nonatomic, strong) NSArray *validationFailedFields;
-
+@property (nonatomic, strong, readonly) NSDictionary *rawData;
 
 - (instancetype)initWithResponseDic:(id)response;
 @end

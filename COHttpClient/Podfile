@@ -12,5 +12,12 @@ end
 
 target 'COHttpClient' do
 all_pods
+
+end
+target 'COHttpClientTests' do
+all_pods
+pod 'Nocilla'
+pod 'JSONKit-NoWarning', '~> 1.2'
+
 end
 

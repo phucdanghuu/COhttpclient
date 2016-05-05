@@ -22,15 +22,19 @@
 #endif
 
 
+#define kCOHttpClientDeviceTypeKey @"X-Device-Type"
+#define kCOHttpClientAPIVersionKey @"X-App-Version"
+#define kCOHttpClientAccessTokenKey @"X-Access-Token"
+
 @class COHttpResponseObject;
 @class COHttpClient;
 
 /**
- *  This delegate purpose is to cutomize header fields, response object or error handling
+ *  This delegate purpose is to customize header fields, response object or error handling
  */
 @protocol COHttpClientDataDelegate <NSObject>
 
-/**
+/**customize
  *  Beside of three default header fields (Device Type, API Version, Access token). This delegate method determines another header fields
  *
  *  @param httpClient Http
@@ -57,12 +61,12 @@
  *
  *  @return <#return value description#>
  */
-- (COHttpResponseObject *)httpClient:(COHttpClient *)httpClient responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionnary:(id)responseObject;
+- (COHttpResponseObject *)httpClient:(COHttpClient *)httpClient responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionary:(id)responseObject;
 @end
 
 
 /**
- *  This class is a wrapper class of AFHTTPSessionManager. It is created to support for easily calling API with Mobile Api Convention (https://gitlab.cogini.com/cogini/wiki/wikis/Mobile-API-Convention)
+ *  This class is a wrapper class of AFHTTPSessionManager. It is created to support for easily calling API with Mobile Api Convention ( https://gitlab.cogini.com/cogini/wiki/wikis/Mobile-API-Convention )
  */
 @interface COHttpClient : NSObject
 
@@ -74,26 +78,32 @@
 @property (nonatomic, readonly) NSString *apiVersion;
 
 /**
- *  According to Cogini Mobile API Convention, this field value that determines deivce type, is set on header fields
+ *  According to Cogini Mobile API Convention, this field value that determines device type, is set on header fields
  */
 @property (nonatomic, readonly) NSString *deviceType;
 
 /**
  *  According to Cogini Mobile API Convention, this field value that determines access token, is set on header fields
  */
-@property (nonatomic, readonly) NSString *accessToken;
+@property (nonatomic) NSString *accessToken;
 
-- (instancetype)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
+//@property (nonatomic) NSTimeInterval timeout;
+
+@property (nonatomic, strong, readonly) AFHTTPRequestSerializer *requestSerializer;
+@property (nonatomic, strong, readonly) AFHTTPResponseSerializer *responseSerializer;
+
+
+- (instancetype)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
 
 /**
- *  Contruction, with setting deviceType to default value "IOS"
+ *  Construction, with setting deviceType to default value "IOS"
  *
  *  @param baseUrl base API Url
  *  @param version API version
  *
  *  @return <#return value description#>
  */
-- (instancetype)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version;
+- (instancetype)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version;
 
 - (NSURLSessionDataTask *) GET:(NSString *)URLString
                       parameters:(id)parameters

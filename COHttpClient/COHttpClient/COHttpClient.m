@@ -8,19 +8,18 @@
 
 #import "COHttpClient.h"
 
-#define kCOHttpClientDeviceTypeKey @"X-Device-Type"
-#define kCOHttpClientAPIVersionKey @"X-App-Version"
-#define kCOHttpClientAccessTokenKey @"X-Access-Token"
+
 @interface COHttpClient () {
-  AFHTTPSessionManager * _manager;
+//  AFHTTPSessionManager * _manager;
 }
 
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @end
 
 @implementation COHttpClient
 
-- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version {
-  self = [self initWithBaseURL:baseUrl];
+- (id)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version {
+  self = [self initWithBaseURL:baseUrl sessionConfiguration:configuration];
 
   if (self) {
     _apiVersion = version;
@@ -29,8 +28,8 @@
   return self;
 }
 
-- (id)initWithBaseURL:(NSURL *)baseUrl apiVersion:(NSString *)version deviceType:(NSString *)deviceType {
-  self = [self initWithBaseURL:baseUrl apiVersion:version];
+- (id)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version deviceType:(NSString *)deviceType {
+  self = [self initWithBaseURL:baseUrl sessionConfiguration:configuration apiVersion:version];
 
   if (self) {
     _deviceType = deviceType;
@@ -39,7 +38,7 @@
   return self;
 }
 
-- (id)initWithBaseURL:(NSURL *)baseUrl {
+- (id)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration {
   self = [super init];
   if(self)
     {
@@ -47,16 +46,44 @@
     _apiVersion = @"";
 
     // Init your data here
-    _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
-    _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    _manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    _manager.responseSerializer.acceptableContentTypes = nil;
+    self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl sessionConfiguration:configuration];
+    self.sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    self.sessionManager.responseSerializer.acceptableContentTypes = nil;
 
     }
   return self;
 }
 
+- (instancetype)init {
+  self = [super init];
 
+  if (self) {
+    self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil];
+    self.sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    self.sessionManager.responseSerializer.acceptableContentTypes = nil;
+
+  }
+
+  return self;
+}
+
+- (void)setRequestSerializer:(AFHTTPRequestSerializer *)requestSerializer {
+  self.sessionManager.requestSerializer = requestSerializer;
+}
+
+- (AFHTTPRequestSerializer *)requestSerializer {
+  return self.sessionManager.requestSerializer;
+}
+
+- (void)setResponseSerializer:(AFHTTPResponseSerializer *)responseSerializer {
+  self.sessionManager.responseSerializer = responseSerializer;
+}
+
+- (AFHTTPResponseSerializer *)responseSerializer {
+  return self.sessionManager.responseSerializer;
+}
 
 - (void)setDefaultHeader:(AFHTTPRequestSerializer *)requestSerializer {
 
@@ -84,8 +111,8 @@
 
 - (COHttpResponseObject *)responseObjectFromTask:(NSURLSessionDataTask *)operation andDictionnary:(id)responseObject {
 
-  if (self.delegate && [self.delegate respondsToSelector:@selector(httpClient:responseObjectFromTask:andDictionnary:)]) {
-    COHttpResponseObject *httpResponseObject = [self.delegate httpClient:self responseObjectFromTask:operation andDictionnary:responseObject];
+  if (self.delegate && [self.delegate respondsToSelector:@selector(httpClient:responseObjectFromTask:andDictionary:)]) {
+    COHttpResponseObject *httpResponseObject = [self.delegate httpClient:self responseObjectFromTask:operation andDictionary:responseObject];
     NSAssert(httpResponseObject != nil, @"httpClient:responseObjectFromTask:andDictionnary: MUST BE RETURN NOT NIL");
     return httpResponseObject;
   } else {
@@ -106,13 +133,15 @@
                        success:(void (^)(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject))success
                        failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
 
-  [self setDefaultHeader:_manager.requestSerializer];
-  HCLOG(@"header %@, params%@", _manager.requestSerializer.HTTPRequestHeaders, parameters);
+  [self setDefaultHeader:self.sessionManager.requestSerializer];
+  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [_manager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+  return [self.sessionManager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     //TODO: Handle download progress
 
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    HCLOG(@"response %@", responseObject);
+
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
     success (task, response);
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -126,14 +155,15 @@
                      parameters:(id)parameters
                         success:(void (^)(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject))success
                         failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
-  [self setDefaultHeader:_manager.requestSerializer];
+  [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", _manager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [_manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+  return [self.sessionManager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
 
     //TODO: Handle download progress
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    HCLOG(@"response %@", responseObject);
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
     success (task, response);
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -148,11 +178,12 @@
                     parameters:(id)parameters
                        success:(void (^)(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject))success
                        failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
-  [self setDefaultHeader:_manager.requestSerializer];
+  [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", _manager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [_manager PUT:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+  return [self.sessionManager PUT:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    HCLOG(@"response %@", responseObject);
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
     success (task, response);
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -167,11 +198,12 @@
                        parameters:(id)parameters
                           success:(void (^)(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject))success
                           failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
-  [self setDefaultHeader:_manager.requestSerializer];
+  [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", _manager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [_manager DELETE:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+  return [self.sessionManager DELETE:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    HCLOG(@"response %@", responseObject);
     COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
     success (task, response);
   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

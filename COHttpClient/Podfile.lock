@@ -14,13 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - JSONKit-NoWarning (1.2)
+  - Nocilla (0.10.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
+  - JSONKit-NoWarning (~> 1.2)
+  - Nocilla
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
+  Nocilla: ae0a2b05f3087b473624ac2b25903695df51246a
 
-PODFILE CHECKSUM: bbde3dc89f819c931f953ea8d15cae526af29d48
+PODFILE CHECKSUM: a724ab886471091ae80757ca7abe2d02859ff107
 
 COCOAPODS: 1.0.0.beta.8
