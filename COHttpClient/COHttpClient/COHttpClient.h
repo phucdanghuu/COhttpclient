@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 #import "COHttpResponseObject.h"
-//#import <AFNetworking/AFHTTPSessionManager.h>
-//#import ""
-
-//#define kIS_SHOW_ERROR NO
-
 
 #ifdef CLSNSLog
 #define HCLOG(__FORMAT__, ...) CLSNSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
@@ -30,11 +25,11 @@
 @class COHttpClient;
 
 /**
- *  This delegate purpose is to customize header fields, response object or error handling
+ *  This delegate purpose is to customized header fields, response object or error handling
  */
 @protocol COHttpClientDataDelegate <NSObject>
 
-/**customize
+/**
  *  Beside of three default header fields (Device Type, API Version, Access token). This delegate method determines another header fields
  *
  *  @param httpClient Http

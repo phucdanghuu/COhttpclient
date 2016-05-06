@@ -85,6 +85,46 @@
   WaitUntilBlockCompletes();
 }
 
+- (void)testWithStatusOK_DataEmptyCheckHeaderFields_ThenSetAccessTokenNil {
+  // This is an example of a functional test case.
+  // Use XCTAssert and related functions to verify your tests produce the correct results.
+  stubRequest(@"GET", @"https://httpclient.com/test").andReturn(200).withBody([@{
+                                                                                 @"status" : @"OK",
+                                                                                 @"data" : @{}
+                                                                                 } JSONString]);
+
+  self.client.accessToken = @"test access token";
+  StartBlock();
+
+  [self.client GET:@"test" parameters:nil success:^(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject) {
+
+    NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientAPIVersionKey] isEqualToString:@"1"], @"kCOHttpClientAPIVersionKey is wrong value");
+    NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientDeviceTypeKey] isEqualToString:@"IOS"], @"kCOHttpClientDeviceTypeKey is wrong value");
+    NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientAccessTokenKey] isEqualToString: @"test access token"], @"kCOHttpClientAccessTokenKey is wrong value");
+
+    self.client.accessToken = nil;
+
+    [self.client GET:@"test" parameters:nil success:^(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject) {
+
+      NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientAPIVersionKey] isEqualToString:@"1"], @"kCOHttpClientAPIVersionKey is wrong value");
+      NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientDeviceTypeKey] isEqualToString:@"IOS"], @"kCOHttpClientDeviceTypeKey is wrong value");
+      NSAssert([[operation.currentRequest.allHTTPHeaderFields objectForKey:kCOHttpClientAccessTokenKey] isEqualToString: @""], @"kCOHttpClientAccessTokenKey must be empty");
+
+      EndBlock();
+
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+      NSAssert(false, @"Should not successful response");
+      EndBlock();
+    }];
+
+  } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+    NSAssert(false, @"Should not successful response");
+    EndBlock();
+  }];
+
+  WaitUntilBlockCompletes();
+}
+
 
 - (void)testWithStatusERROR_MessageError {
   // This is an example of a functional test case.

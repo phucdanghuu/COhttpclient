@@ -33,6 +33,8 @@
   self.client = [[COHttpClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://httpclient.com/"] sessionConfiguration:nil  apiVersion:@"1" deviceType:@"IOS"];
   self.client.delegate = self;
   self.didPassThroughDidCatchError = NO;
+
+  
   // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -102,9 +104,7 @@
   StartBlock();
 
   [self.client GET:@"test" parameters:nil success:^(NSURLSessionDataTask *operation, COHttpResponseObject *responseObject) {
-
     NSAssert(false, @"Should not successful response");
-
 
     EndBlock();
   } failure:^(NSURLSessionDataTask *operation, NSError *error) {

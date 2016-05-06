@@ -97,6 +97,9 @@
 
   if (self.accessToken) {
     [requestSerializer setValue:self.accessToken forHTTPHeaderField:kCOHttpClientAccessTokenKey];
+  } else {
+    [requestSerializer setValue:@"" forHTTPHeaderField:kCOHttpClientAccessTokenKey];
+
   }
 
   if (self.delegate && [self.delegate respondsToSelector:@selector(httpClientWithDefaultHeaderFields:)]) {

@@ -13,5 +13,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "__86-[COHttpClientTests testWithStatusOK_DataEmptyCheckHeaderFields_ThenSetAccessTokenNil]_block_invoke_2:COHttpClientTests.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "operation.currentRequest.allHTTPHeaderFields">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
