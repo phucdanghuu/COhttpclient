@@ -87,6 +87,13 @@
 @property (nonatomic, strong, readonly) AFHTTPRequestSerializer *requestSerializer;
 @property (nonatomic, strong, readonly) AFHTTPResponseSerializer *responseSerializer;
 
+/**
+ *  Set Key-Value for Header Fields
+ *
+ *  @param value
+ *  @param field
+ */
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
 
 - (instancetype)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version deviceType:(NSString *)deviceType;
 
@@ -96,7 +103,7 @@
  *  @param baseUrl base API Url
  *  @param version API version
  *
- *  @return <#return value description#>
+ *  @return 
  */
 - (instancetype)initWithBaseURL:(NSURL *)baseUrl sessionConfiguration:(NSURLSessionConfiguration *)configuration apiVersion:(NSString *)version;
 

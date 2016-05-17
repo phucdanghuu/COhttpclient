@@ -85,6 +85,10 @@
   return self.sessionManager.responseSerializer;
 }
 
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
+  [self.requestSerializer setValue:value forHTTPHeaderField:field];
+}
+
 - (void)setDefaultHeader:(AFHTTPRequestSerializer *)requestSerializer {
 
   if (self.deviceType) {
@@ -123,7 +127,6 @@
     return httpResponseObject;
   }
 }
-
 
 - (void)didCatchFailure:(NSURLSessionDataTask *)operation error:(NSError *)error {
   if (self.delegate && [self.delegate respondsToSelector:@selector(httpClient:didCatchFailure:error:)]) {
