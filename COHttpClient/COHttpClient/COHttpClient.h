@@ -84,8 +84,8 @@
 
 //@property (nonatomic) NSTimeInterval timeout;
 
-@property (nonatomic, strong, readonly) AFHTTPRequestSerializer *requestSerializer;
-@property (nonatomic, strong, readonly) AFHTTPResponseSerializer *responseSerializer;
+@property (atomic) AFHTTPRequestSerializer *requestSerializer;
+@property (atomic) AFHTTPResponseSerializer *responseSerializer;
 
 /**
  *  Set Key-Value for Header Fields
