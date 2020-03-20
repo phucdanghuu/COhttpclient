@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */; };
+		1D407354720E0F5CF1E418CB /* Pods_COHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9279AEE984F34EC5178280EE /* Pods_COHttpClient.framework */; };
 		6E788B741CD0CD55008EF1F7 /* COHttpClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E788B731CD0CD55008EF1F7 /* COHttpClient.h */; };
 		6E788B761CD0CD55008EF1F7 /* COHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B751CD0CD55008EF1F7 /* COHttpClient.m */; };
 		6E788B7C1CD0E309008EF1F7 /* COHttpResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */; };
@@ -27,18 +27,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		350DD0E91E72F039D737B277 /* libPods-COHttpClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-COHttpClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60FE492D094B5049F4ADF29A /* Pods-COHttpClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClientTests/Pods-COHttpClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F732D43BDBF41DF3FBD7EB9 /* Pods-COHttpClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.debug.xcconfig"; path = "Target Support Files/Pods-COHttpClient/Pods-COHttpClient.debug.xcconfig"; sourceTree = "<group>"; };
 		6E788B581CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCOHttpClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E788B731CD0CD55008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
 		6E788B751CD0CD55008EF1F7 /* COHttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClient.m; sourceTree = "<group>"; };
 		6E788B7A1CD0E309008EF1F7 /* COHttpResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COHttpResponseObject.h; sourceTree = "<group>"; };
 		6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COHttpResponseObject.m; sourceTree = "<group>"; };
-		728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClient/Pods-COHttpClient.release.xcconfig"; sourceTree = "<group>"; };
-		7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-COHttpClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClient/Pods-COHttpClient.debug.xcconfig"; sourceTree = "<group>"; };
-		B3FB0BD2141C0BAF28469CB3 /* Pods-COHttpClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClientTests/Pods-COHttpClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9279AEE984F34EC5178280EE /* Pods_COHttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COHttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66ACF49BA2710035A55ACEE /* Pods-COHttpClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClient.release.xcconfig"; path = "Target Support Files/Pods-COHttpClient/Pods-COHttpClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,41 +43,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */,
+				1D407354720E0F5CF1E418CB /* Pods_COHttpClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22E598A1798026632D33E97C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */,
-				728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */,
-				B3FB0BD2141C0BAF28469CB3 /* Pods-COHttpClientTests.debug.xcconfig */,
-				60FE492D094B5049F4ADF29A /* Pods-COHttpClientTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		69CEF5556FB71E710784C4D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */,
-				350DD0E91E72F039D737B277 /* libPods-COHttpClientTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6E788B491CD0CCF3008EF1F7 = {
 			isa = PBXGroup;
 			children = (
 				6E788B551CD0CCF3008EF1F7 /* COHttpClient */,
 				6E788B721CD0CD55008EF1F7 /* COHttpClient */,
 				6E788B541CD0CCF3008EF1F7 /* Products */,
-				22E598A1798026632D33E97C /* Pods */,
-				69CEF5556FB71E710784C4D5 /* Frameworks */,
+				FA5691388FD594E19F530725 /* Pods */,
+				EFAEE83F26A7CF8B1D072B64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +88,23 @@
 			path = COHttpClient;
 			sourceTree = "<group>";
 		};
+		EFAEE83F26A7CF8B1D072B64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9279AEE984F34EC5178280EE /* Pods_COHttpClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA5691388FD594E19F530725 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F732D43BDBF41DF3FBD7EB9 /* Pods-COHttpClient.debug.xcconfig */,
+				D66ACF49BA2710035A55ACEE /* Pods-COHttpClient.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,8 +112,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E788B771CD0CD55008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClient" */;
 			buildPhases = (
-				AA8358AEEB9BA3AE79FD7A4B /* [CP] Check Pods Manifest.lock */,
-				09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */,
+				1EC16D566FF23A5ACD277CD5 /* [CP] Check Pods Manifest.lock */,
 				6E788B6D1CD0CD55008EF1F7 /* Sources */,
 				6E788B6E1CD0CD55008EF1F7 /* Frameworks */,
 				6E788B6F1CD0CD55008EF1F7 /* CopyFiles */,
@@ -166,22 +159,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AA8358AEEB9BA3AE79FD7A4B /* [CP] Check Pods Manifest.lock */ = {
+		1EC16D566FF23A5ACD277CD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,7 +288,7 @@
 		};
 		6E788B781CD0CD55008EF1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0C86100AECFE032A20AB93F /* Pods-COHttpClient.debug.xcconfig */;
+			baseConfigurationReference = 3F732D43BDBF41DF3FBD7EB9 /* Pods-COHttpClient.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -320,7 +298,7 @@
 		};
 		6E788B791CD0CD55008EF1F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 728F2E4DD558F2B245737293 /* Pods-COHttpClient.release.xcconfig */;
+			baseConfigurationReference = D66ACF49BA2710035A55ACEE /* Pods-COHttpClient.release.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
