@@ -7,25 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60FDFF0BD0D92D38DB0DEB72 /* libPods-COHttpClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD0E91E72F039D737B277 /* libPods-COHttpClientTests.a */; };
 		6197B485766F491FA9C5A7A7 /* libPods-COHttpClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D385429B49F3D6DDBC30D58 /* libPods-COHttpClient.a */; };
-		6E47764D1CD9D13B00F2BC94 /* COHttpClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47764C1CD9D13B00F2BC94 /* COHttpClientTests.m */; };
-		6E47764F1CD9D13B00F2BC94 /* libCOHttpClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */; };
-		6E47765A1CD9DE0100F2BC94 /* COHttpClientWithDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4776581CD9DE0100F2BC94 /* COHttpClientWithDelegate.m */; };
 		6E788B741CD0CD55008EF1F7 /* COHttpClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E788B731CD0CD55008EF1F7 /* COHttpClient.h */; };
 		6E788B761CD0CD55008EF1F7 /* COHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B751CD0CD55008EF1F7 /* COHttpClient.m */; };
 		6E788B7C1CD0E309008EF1F7 /* COHttpResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E788B7B1CD0E309008EF1F7 /* COHttpResponseObject.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6E4776501CD9D13B00F2BC94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E788B4A1CD0CCF3008EF1F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E788B701CD0CD55008EF1F7;
-			remoteInfo = COHttpClient;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6E788B6F1CD0CD55008EF1F7 /* CopyFiles */ = {
@@ -43,11 +29,6 @@
 /* Begin PBXFileReference section */
 		350DD0E91E72F039D737B277 /* libPods-COHttpClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-COHttpClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FE492D094B5049F4ADF29A /* Pods-COHttpClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COHttpClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-COHttpClientTests/Pods-COHttpClientTests.release.xcconfig"; sourceTree = "<group>"; };
-		6E47764A1CD9D13B00F2BC94 /* COHttpClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COHttpClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E47764C1CD9D13B00F2BC94 /* COHttpClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COHttpClientTests.m; sourceTree = "<group>"; };
-		6E47764E1CD9D13B00F2BC94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E4776571CD9DDAD00F2BC94 /* COUnittestPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COUnittestPrefix.pch; sourceTree = "<group>"; };
-		6E4776581CD9DE0100F2BC94 /* COHttpClientWithDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COHttpClientWithDelegate.m; sourceTree = "<group>"; };
 		6E788B581CD0CCF3008EF1F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCOHttpClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E788B731CD0CD55008EF1F7 /* COHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COHttpClient.h; sourceTree = "<group>"; };
@@ -61,15 +42,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E4776471CD9D13B00F2BC94 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E47764F1CD9D13B00F2BC94 /* libCOHttpClient.a in Frameworks */,
-				60FDFF0BD0D92D38DB0DEB72 /* libPods-COHttpClientTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6E788B6E1CD0CD55008EF1F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,23 +73,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E47764B1CD9D13B00F2BC94 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				6E47764C1CD9D13B00F2BC94 /* COHttpClientTests.m */,
-				6E47764E1CD9D13B00F2BC94 /* Info.plist */,
-				6E4776571CD9DDAD00F2BC94 /* COUnittestPrefix.pch */,
-				6E4776581CD9DE0100F2BC94 /* COHttpClientWithDelegate.m */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		6E788B491CD0CCF3008EF1F7 = {
 			isa = PBXGroup;
 			children = (
 				6E788B551CD0CCF3008EF1F7 /* COHttpClient */,
 				6E788B721CD0CD55008EF1F7 /* COHttpClient */,
-				6E47764B1CD9D13B00F2BC94 /* Tests */,
 				6E788B541CD0CCF3008EF1F7 /* Products */,
 				22E598A1798026632D33E97C /* Pods */,
 				69CEF5556FB71E710784C4D5 /* Frameworks */,
@@ -128,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				6E788B711CD0CD55008EF1F7 /* libCOHttpClient.a */,
-				6E47764A1CD9D13B00F2BC94 /* COHttpClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,26 +114,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E4776491CD9D13B00F2BC94 /* COHttpClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E4776541CD9D13B00F2BC94 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */;
-			buildPhases = (
-				4F6E673270635C6D5E61B051 /* [CP] Check Pods Manifest.lock */,
-				16056BE5B343F0613D91F8FF /* 📦 Check Pods Manifest.lock */,
-				6E4776461CD9D13B00F2BC94 /* Sources */,
-				6E4776471CD9D13B00F2BC94 /* Frameworks */,
-				6E4776481CD9D13B00F2BC94 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6E4776511CD9D13B00F2BC94 /* PBXTargetDependency */,
-			);
-			name = COHttpClientTests;
-			productName = Tests;
-			productReference = 6E47764A1CD9D13B00F2BC94 /* COHttpClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		6E788B701CD0CD55008EF1F7 /* COHttpClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E788B771CD0CD55008EF1F7 /* Build configuration list for PBXNativeTarget "COHttpClient" */;
@@ -203,9 +142,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Cogini;
 				TargetAttributes = {
-					6E4776491CD9D13B00F2BC94 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					6E788B701CD0CD55008EF1F7 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -216,6 +152,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 6E788B491CD0CCF3008EF1F7;
@@ -224,20 +161,9 @@
 			projectRoot = "";
 			targets = (
 				6E788B701CD0CD55008EF1F7 /* COHttpClient */,
-				6E4776491CD9D13B00F2BC94 /* COHttpClientTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		6E4776481CD9D13B00F2BC94 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		09B90E0953691EE7EBA6E8D8 /* 📦 Check Pods Manifest.lock */ = {
@@ -253,43 +179,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		16056BE5B343F0613D91F8FF /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4F6E673270635C6D5E61B051 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-COHttpClientTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA8358AEEB9BA3AE79FD7A4B /* [CP] Check Pods Manifest.lock */ = {
@@ -317,15 +206,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6E4776461CD9D13B00F2BC94 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E47764D1CD9D13B00F2BC94 /* COHttpClientTests.m in Sources */,
-				6E47765A1CD9DE0100F2BC94 /* COHttpClientWithDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6E788B6D1CD0CD55008EF1F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,39 +217,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6E4776511CD9D13B00F2BC94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E788B701CD0CD55008EF1F7 /* COHttpClient */;
-			targetProxy = 6E4776501CD9D13B00F2BC94 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		6E4776521CD9D13B00F2BC94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3FB0BD2141C0BAF28469CB3 /* Pods-COHttpClientTests.debug.xcconfig */;
-			buildSettings = {
-				GCC_PREFIX_HEADER = ./Tests/COUnittestPrefix.pch;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		6E4776531CD9D13B00F2BC94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60FE492D094B5049F4ADF29A /* Pods-COHttpClientTests.release.xcconfig */;
-			buildSettings = {
-				GCC_PREFIX_HEADER = ./Tests/COUnittestPrefix.pch;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cogini.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		6E788B651CD0CCF3008EF1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -483,15 +331,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E4776541CD9D13B00F2BC94 /* Build configuration list for PBXNativeTarget "COHttpClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E4776521CD9D13B00F2BC94 /* Debug */,
-				6E4776531CD9D13B00F2BC94 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6E788B4D1CD0CCF3008EF1F7 /* Build configuration list for PBXProject "COHttpClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
