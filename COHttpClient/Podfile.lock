@@ -6,26 +6,18 @@ PODS:
   - AFNetworking/Reachability (3.0.4)
   - AFNetworking/Security (3.0.4)
   - AFNetworking/Serialization (3.0.4)
-  - JSONKit-NoWarning (1.2)
-  - Nocilla (0.10.0)
 
 DEPENDENCIES:
   - AFNetworking/NSURLSession (~> 3.0.4)
   - AFNetworking/Reachability (~> 3.0.4)
-  - JSONKit-NoWarning (~> 1.2)
-  - Nocilla
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - JSONKit-NoWarning
-    - Nocilla
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
-  Nocilla: ae0a2b05f3087b473624ac2b25903695df51246a
 
-PODFILE CHECKSUM: a6e8ae9543b02b53c63f650f8cfe6304daac717f
+PODFILE CHECKSUM: 2f14a8e72f428b9d0ef2c6409b19e5edb20185f6
 
 COCOAPODS: 1.9.1
