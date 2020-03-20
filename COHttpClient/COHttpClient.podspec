@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "COHttpClient"
-  s.version      = "0.1"
+  s.version      = "0.2.3"
   s.summary      = "A short description of COHttpClient."
 
   # This description is used to generate tags and improve search results.
