@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "COHttpClient"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "A short description of COHttpClient."
 
   # This description is used to generate tags and improve search results.
@@ -131,7 +131,9 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "AFNetworking"
-  s.dependency 'AFNetworking/NSURLSession'
-  s.dependency 'AFNetworking/Reachability'
+  #s.dependency "AFNetworking"
+  s.dependency 'AFNetworking/NSURLSession', '3.0.4'
+  s.dependency 'AFNetworking/Reachability', '3.0.4'
+  s.dependency 'AFNetworking/Security', '3.0.4'
+  s.dependency 'AFNetworking/Serialization', '3.0.4'
 end

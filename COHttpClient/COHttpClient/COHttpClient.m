@@ -140,7 +140,7 @@
                        failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
 
   [self setDefaultHeader:self.sessionManager.requestSerializer];
-  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"URL: %@, header %@, params%@", URLString, self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
   return [self.sessionManager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     //TODO: Handle download progress
@@ -163,7 +163,7 @@
                         failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
   [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"URL: %@, header %@, params%@", URLString ,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
   return [self.sessionManager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
 
@@ -186,7 +186,7 @@
                        failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
   [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"URL: %@, header %@, params%@", URLString,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
   return [self.sessionManager PUT:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     HCLOG(@"response %@", responseObject);
@@ -206,7 +206,7 @@
                           failure:(void (^)(NSURLSessionDataTask *operation, NSError *error))failure {
   [self setDefaultHeader:self.sessionManager.requestSerializer];
 
-  HCLOG(@"header %@, params%@", self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
+  HCLOG(@"URL: %@, header %@, params%@", URLString ,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
   return [self.sessionManager DELETE:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     HCLOG(@"response %@", responseObject);
