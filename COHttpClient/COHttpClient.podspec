@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "COHttpClient"
-  s.version      = "0.2.6"
+  s.version      = "0.2.7"
   s.summary      = "A short description of COHttpClient."
 
   # This description is used to generate tags and improve search results.
@@ -62,8 +62,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.platform     = :ios
-   s.platform     = :ios, "7.0"
+   #s.platform     = :ios
+   s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
