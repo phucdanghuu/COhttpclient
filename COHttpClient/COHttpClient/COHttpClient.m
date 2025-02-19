@@ -142,19 +142,18 @@
   [self setDefaultHeader:self.sessionManager.requestSerializer];
   HCLOG(@"URL: %@, header %@, params%@", URLString, self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [self.sessionManager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-    //TODO: Handle download progress
+    return [self.sessionManager GET:URLString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        //
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HCLOG(@"response %@", responseObject);
 
-  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    HCLOG(@"response %@", responseObject);
+        COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
+        success (task, response);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self didCatchFailure:task error:error];
+        failure(task, error);
+    }];
 
-    COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
-    success (task, response);
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-    [self didCatchFailure:task error:error];
-    failure(task, error);
-  }];
 }
 
 - (NSURLSessionDataTask *) POST:(NSString *)URLString
@@ -165,18 +164,16 @@
 
   HCLOG(@"URL: %@, header %@, params%@", URLString ,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [self.sessionManager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-
-    //TODO: Handle download progress
-  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    HCLOG(@"response %@", responseObject);
-    COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
-    success (task, response);
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-    [self didCatchFailure:task error:error];
-    failure(task, error);
-  }];
+    return [self.sessionManager POST:URLString parameters:parameters headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        //
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HCLOG(@"response %@", responseObject);
+        COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
+        success (task, response);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self didCatchFailure:task error:error];
+        failure(task, error);
+    }];
 
 }
 
@@ -188,15 +185,14 @@
 
   HCLOG(@"URL: %@, header %@, params%@", URLString,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [self.sessionManager PUT:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    HCLOG(@"response %@", responseObject);
-    COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
-    success (task, response);
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-    [self didCatchFailure:task error:error];
-    failure(task, error);
-  }];
+    return [self.sessionManager PUT:URLString parameters:parameters headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HCLOG(@"response %@", responseObject);
+        COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
+        success (task, response);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self didCatchFailure:task error:error];
+        failure(task, error);
+    }];
 
 }
 
@@ -208,15 +204,15 @@
 
   HCLOG(@"URL: %@, header %@, params%@", URLString ,self.sessionManager.requestSerializer.HTTPRequestHeaders, parameters);
 
-  return [self.sessionManager DELETE:URLString parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-    HCLOG(@"response %@", responseObject);
-    COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
-    success (task, response);
-  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
-    [self didCatchFailure:task error:error];
-    failure(task, error);
-  }];
+    return [self.sessionManager DELETE:URLString parameters:parameters headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        HCLOG(@"response %@", responseObject);
+        COHttpResponseObject* response = [self responseObjectFromTask:task andDictionnary:responseObject];
+        success (task, response);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [self didCatchFailure:task error:error];
+        failure(task, error);
+    }];
 }
 
 @end

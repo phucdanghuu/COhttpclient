@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "COHttpClient"
-  s.version      = "0.2.7"
+  s.version      = "0.2.8"
   s.summary      = "A short description of COHttpClient."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://gitlab.cogini.com/kien.tran/cohttpclient.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/phucdanghuu/COhttpclient.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -131,9 +131,9 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  #s.dependency "AFNetworking"
-  s.dependency 'AFNetworking/NSURLSession', '3.0.4'
-  s.dependency 'AFNetworking/Reachability', '3.0.4'
-  s.dependency 'AFNetworking/Security', '3.0.4'
-  s.dependency 'AFNetworking/Serialization', '3.0.4'
+  s.dependency "AFNetworking", '4.0.1'
+  # s.dependency 'AFNetworking/NSURLSession', '3.0.4'
+  # s.dependency 'AFNetworking/Reachability', '3.0.4'
+  # s.dependency 'AFNetworking/Security', '3.0.4'
+  # s.dependency 'AFNetworking/Serialization', '3.0.4'
 end
